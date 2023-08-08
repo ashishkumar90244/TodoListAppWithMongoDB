@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .task-list {
+            flex: 1;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .add-task-form {
+            flex: 1;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .task-item {
+            margin-bottom: 10px;
+            padding: 5px;
+            border-radius: 3px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .task-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group input[type="file"] {
+            display: block;
+            margin-top: 5px;
+        }
+
+        .form-group button {
+            padding: 8px 12px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        nav{
+            background-color: #333; overflow: hidden;
+            padding-top: 18px;
+            height: 50px;
+         }
+        
+        a{
+            color: white;
+            text-decoration: none;
+            margin-right: 24px;
+            margin-left: 18px;
+            margin-top: 40px;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+
+        <a href="/about">about</a>
+        
+        <a href="/contact">Contact</a>
+        
+        
+        
+        <a href="/todo">Todo</a>
+        
+        <img src="<%= profilePic %>" alt="" height="44" width="48" style="float: right; margin-right: 30px; border-radius: 10px;" >
+
+
+        <a href="/logout" class="logout">Logout</a>
+        <strong style="color:wheat; margin-left: 45%; font-size: larger;">Hello! <%= username %></strong>
+
+        
+
+        
+        </nav>
+    <div class="container">
+        <div class="task-list">
+            <table id="todo-item" class="table" cellpadding="10" width="100%" cellspacing="0">
+                <tr>
+                    <td colspan="3" style=" background-color: green; border-top: 1px solid black; "><center><b>List of the Tasks</b></center></td>
+                </tr>
+            </table>
+        </div>
+        <div class="add-task-form">
+            <h2>Add Task</h2>
+            <form id="form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="userInput">Task Name:</label>
+                    <input type="text" id="userInput" name="taskName" placeholder="Enter task name"  required>
+                </div>
+                <div class="form-group">
+                    <label for="prioritySelector">Priority:</label>
+                    <select id="prioritySelector" name="priority" required>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="taskImage">Task Image:</label>
+                    <input type="file" id="taskImage" name="taskImage" accept="image/*">
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="submitTodo">Add Task</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="./public/script.js"></script>
+</body>
+</html>
